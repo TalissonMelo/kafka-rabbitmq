@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 
 import com.talissonmelo.order_report.entities.enums.OrderStatus;
 import com.talissonmelo.order_report.entities.request.OrderReportRequest;
+import com.talissonmelo.order_report.entities.request.UpdateOrder;
+import com.talissonmelo.order_report.rabbitmq.AppEventGateway;
 import com.talissonmelo.order_report.repositories.OrderReportRespository;
 import com.talissonmelo.order_report.services.CreateOrderReportService;
 
@@ -19,6 +21,7 @@ public class KafkaConsumerMessage {
 	private final Logger LOG = LoggerFactory.getLogger(KafkaConsumerMessage.class);
 	private final CreateOrderReportService service;
 	private final OrderReportRespository respository;
+	private final AppEventGateway appEventGateway;
 
 	@KafkaListener(topics = "order-payment-post-topic", groupId = "order-payment-post-group")
 	public Object listening(OrderReportRequest request) {
@@ -30,7 +33,9 @@ public class KafkaConsumerMessage {
 			if (response.isPresent()) {
 				var order = response.get();
 				order.update(request.status());
-				return respository.save(order);
+				var orderPayment = respository.save(order);
+				appEventGateway.send(new UpdateOrder(orderPayment.getIdOrder(), orderPayment.getStatus()));
+				return orderPayment;
 			}
 		}
 		service.excute(request);

@@ -11,4 +11,16 @@ spring:
     locations: classpath:db/migration
   kafka:
     bootstrap-servers: ${KAFKA_URL:localhost}:${KAFKA_PORT:9092}
+  rabbitmq:
+    username: ${RABBIT_MQ_USERNAME:rabbitmq}
+    password: ${RABBIT_MQ_PASSWORD:rabbitmq}
+    host: ${RABBIT_HOST:localhost}
+    port: 5672
+  cloud:
+    stream:
+      function: 
+        definition: appUpdatedSupplier
+      bindings:
+       appUpdatedSupplier-out-0:
+          destination: app.v1.event.app-updated
 
