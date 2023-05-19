@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.talissonmelo.order_report.entities.enums.OrderStatus;
 import com.talissonmelo.order_report.entities.request.OrderReportRequest;
-import com.talissonmelo.order_report.entities.request.UpdateOrder;
+import com.talissonmelo.order_report.entities.request.UpdateOrderRequest;
 import com.talissonmelo.order_report.rabbitmq.AppEventGateway;
 import com.talissonmelo.order_report.repositories.OrderReportRespository;
 import com.talissonmelo.order_report.services.CreateOrderReportService;
@@ -34,7 +34,7 @@ public class KafkaConsumerMessage {
 				var order = response.get();
 				order.update(request.status());
 				var orderPayment = respository.save(order);
-				appEventGateway.send(new UpdateOrder(orderPayment.getIdOrder(), orderPayment.getStatus()));
+				appEventGateway.send(new UpdateOrderRequest(orderPayment.getIdOrder(), orderPayment.getStatus()));
 				return orderPayment;
 			}
 		}

@@ -32,5 +32,10 @@ public class Order {
 
 	public static Order createOrder(String title, String description) {
 		return new Order(title, description);
-	}	
+	}
+
+	public Order update(OrderStatus status) {
+		this.status = status;
+		return this;
+	}
 }

@@ -10,3 +10,11 @@ spring:
     locations: classpath:db/migration
   kafka:
     bootstrap-servers: ${KAFKA_URL:localhost}:${KAFKA_PORT:9092}
+  cloud:
+    stream:
+      function:
+        definition: appUpdatedEventListener
+      bindings:
+        appUpdatedEventListener-in-0:
+          destination: app.v1.event.app-updated
+          group: scheduler

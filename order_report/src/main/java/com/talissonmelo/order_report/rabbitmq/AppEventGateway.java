@@ -1,7 +1,7 @@
 package com.talissonmelo.order_report.rabbitmq;
 
-import com.talissonmelo.order_report.entities.request.UpdateOrder;
+import com.talissonmelo.order_report.entities.request.UpdateOrderRequest;
 
 public interface AppEventGateway {
-    void send(UpdateOrder updateOrder );
+    void send(UpdateOrderRequest updateOrder );
 }

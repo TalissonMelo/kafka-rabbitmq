@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "797bb89e-5a0c-4ef0-958e-3551dea538b1",
+		"name": "Kafka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9138560",
+		"_collection_link": "https://solar-zodiac-578055.postman.co/workspace/Team-Workspace~2b883e6b-faa4-446a-882e-4c037df9365a/collection/9138560-797bb89e-5a0c-4ef0-958e-3551dea538b1?action=share&creator=9138560&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Order",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Kafka e RabbitMq\",\r\n  \"description\": \"Utilizar Java com Spring Boot v3 +\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orders",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/v1/orders?page=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdersPayments",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/v1/orders-payments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"orders-payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdersPayments",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": 999.99,\r\n    \"observation\": \"Ok\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/v1/orders-payments/798b0f80-8bb3-49e2-b064-e7028151c98e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"orders-payments",
+						"798b0f80-8bb3-49e2-b064-e7028151c98e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdersReports",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/v1/orders-reports",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"v1",
+						"orders-reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdersPayments Done",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": 459.99,\r\n    \"observation\": \"Descrever cor para iniciar pintura\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/v1/orders-payments/798b0f80-8bb3-49e2-b064-e7028151c98e/done",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"orders-payments",
+						"798b0f80-8bb3-49e2-b064-e7028151c98e",
+						"done"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdersPayments Canceled",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": 459.99,\r\n    \"observation\": \"Descrever cor para iniciar pintura\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/v1/orders-payments/ccfadfa1-6ec3-4f2f-81ed-8d93a2c121e6/canceled",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"orders-payments",
+						"ccfadfa1-6ec3-4f2f-81ed-8d93a2c121e6",
+						"canceled"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
