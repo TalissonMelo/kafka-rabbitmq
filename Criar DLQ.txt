@@ -1,0 +1,17 @@
+Criar DLQ
+
+dead-letter-queue
+
+Arguments
+
+x-dead-letter-exchange:	
+x-dead-letter-routing-key:	
+
+Quando crair Fila principais 
+
+dev_sync_place
+
+Arguments 
+
+x-dead-letter-exchange:	
+x-dead-letter-routing-key: dead-letter-queue
