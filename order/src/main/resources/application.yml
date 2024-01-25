@@ -1,7 +1,6 @@
-server:
-  port: 8081
-
 spring:
+  application:
+    name: order
   datasource:
     url: jdbc:mysql://${DATA_BASE_URL:localhost}:3306/order?createDatabaseIfNotExist=true&serverTimezone=UTC
     username: ${DATA_BASE_USERNAME:root}
@@ -18,3 +17,13 @@ spring:
         appUpdatedEventListener-in-0:
           destination: app.v1.event.app-updated
           group: scheduler
+
+server:
+  port: 0
+
+eureka:
+  client:
+    server-url:
+      defaultZone: http://localhost:8761/eureka
+#  instance:
+#    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
