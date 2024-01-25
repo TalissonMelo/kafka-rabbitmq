@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api_gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enable: true
+          lower-case-service-id: true
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    server-url:
+      defaultZone: http://localhost:8761/eureka
