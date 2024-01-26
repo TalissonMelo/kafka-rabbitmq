@@ -47,8 +47,6 @@ services:
       - default-network
     environment:
       KAFKA_BROKERCONNECT: broker:29092
-    
-
 
   mysql:
     image: mysql
@@ -75,6 +73,18 @@ services:
       retries: 10
     networks:
       - default-network
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:23.0.4
+    ports:
+      - "8081:8080"
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    command: start-dev
+    networks:
+      - default-network
+  
 
 networks:
   default-network:
