@@ -22,6 +22,7 @@ public class ApiGatewayApplication {
 		return  routeLocatorBuilder.routes()
 				.route( r -> r.path("/v1/orders/**").uri("lb://order"))
 				.route( r -> r.path("/v1/orders-payments/**").uri("lb://order-payment"))
+				.route( r -> r.path("/v1/orders-reports/**").uri("lb://order-report"))
 				.build();
 	}
 

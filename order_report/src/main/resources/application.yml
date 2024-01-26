@@ -1,8 +1,9 @@
-
 server:
-  port: 8083
+  port: 0
 
 spring:
+  application:
+    name: order-report
   datasource:
     url: jdbc:mysql://${DATA_BASE_URL:localhost}:3306/order_report?createDatabaseIfNotExist=true&serverTimezone=UTC
     username: ${DATA_BASE_USERNAME:root}
@@ -24,3 +25,10 @@ spring:
        appUpdatedSupplier-out-0:
           destination: app.v1.event.app-updated
 
+
+eureka:
+  client:
+    server-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
