@@ -10,9 +10,9 @@ spring:
   kafka:
     bootstrap-servers: ${KAFKA_URL:localhost}:${KAFKA_PORT:9092}
   rabbitmq:
-    username: rabbitmq
-    password: rabbitmq
-    host: localhost
+    username: ${RABBIT_MQ_USERNAME:rabbitmq}
+    password: ${RABBIT_MQ_PASSWORD:rabbitmq}
+    host: ${RABBIT_HOST:localhost}
     port: 5672
   cloud:
     stream:
@@ -29,6 +29,6 @@ server:
 eureka:
   client:
     server-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${EUREKA_URL:localhost}:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}

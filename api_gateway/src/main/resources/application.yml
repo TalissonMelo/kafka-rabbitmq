@@ -14,11 +14,11 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8081/realms/OrderRabbitMQAndKafka
+          issuer-uri: http://${SECURITY_URL:localhost}:8081/realms/OrderRabbitMQAndKafka
 
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
     server-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${EUREKA_URL:localhost}:8761/eureka
