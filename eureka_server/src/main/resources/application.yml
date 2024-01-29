@@ -5,7 +5,7 @@ spring:
     basic:
       enabled: true
     user:
-      name: ${EUREKA_SECURITY_USERNAME:ms_eureka_user}
+      name: ${EUREKA_SECURITY_USERNAME:ms-eureka-server}
       password: ${EUREKA_SECURITY_PASSWORD:002cd034-e604-4084-ab1a-ef49a8f135e6}
 
 
