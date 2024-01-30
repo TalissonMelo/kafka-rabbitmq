@@ -77,3 +77,19 @@
 2024-01-29 06:59:10.847  INFO 4860 --- [http-nio-auto-1-exec-5] c.t.order.service.GetOrdersService       : LIST ORDERS
 2024-01-29 06:59:11.381  INFO 4860 --- [http-nio-auto-1-exec-6] c.t.order.service.GetOrdersService       : LIST ORDERS
 2024-01-29 06:59:11.834  INFO 4860 --- [http-nio-auto-1-exec-7] c.t.order.service.GetOrdersService       : LIST ORDERS
+2024-01-29 07:01:11.903  INFO 4860 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-01-29 07:03:32.895  INFO 4860 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDER with eureka with status DOWN
+2024-01-29 07:03:32.895  INFO 4860 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1706522612895, current=DOWN, previous=UP]
+2024-01-29 07:03:32.895  INFO 4860 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER/order:f8b20fc369c33ff836ff7594e6b49cc5: registering service...
+2024-01-29 07:03:32.899  INFO 4860 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER/order:f8b20fc369c33ff836ff7594e6b49cc5 - registration status: 204
+2024-01-29 07:03:32.911  INFO 4860 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-01-29 07:03:33.477  INFO 4860 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-01-29 07:03:33.478  INFO 4860 --- [SpringApplicationShutdownHook] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.app.v1.event.app-updated.scheduler'
+2024-01-29 07:03:33.482  INFO 4860 --- [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'order.app.v1.event.app-updated.scheduler.errors' has 1 subscriber(s).
+2024-01-29 07:03:33.485  INFO 4860 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-01-29 07:03:33.486  INFO 4860 --- [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'order.errorChannel' has 0 subscriber(s).
+2024-01-29 07:03:33.486  INFO 4860 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2024-01-29 07:03:33.506  INFO 4860 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-29 07:03:33.512  INFO 4860 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-29 07:03:33.545  INFO 4860 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-29 07:03:33.546  INFO 4860 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...

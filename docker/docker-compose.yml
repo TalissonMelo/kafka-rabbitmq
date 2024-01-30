@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  eureka-server:
+      image: talissonmelo/eureka_server:latest
+      ports:
+        - 8761:8761
+      environment:
+      - EUREKA_SECURITY_USERNAME=ms-eureka-server
+      - EUREKA_SECURITY_PASSWORD=002cd034-e604-4084-ab1a-ef49a8f135e6
+      networks:
+        - network
+
+networks:
+  network:
+    driver: bridge
